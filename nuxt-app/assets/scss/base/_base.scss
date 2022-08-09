@@ -1,0 +1,52 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading);
+}
+
+p {
+  color: var(--color);
+}
+
+a:not(.button) {
+  color: var(--link);
+
+  &:hover {
+    color: var(--link-hover);
+  }
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: square;
+  padding-left: 2rem;
+
+  ::marker {
+    color: var(--link);
+    // font-size: 1.5em;
+  }
+}
+
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4 {
+  line-height: 1;
+  color: var(--heading);
+}
+
+.heading-1 {
+  font-size: var(--fsf-3);
+  // text-transform: uppercase;
+}
+
+.heading-2 {
+  font-size: var(--fsf-2);
+}
+
+.heading-3 {
+  font-size: var(--fsf-1);
+}

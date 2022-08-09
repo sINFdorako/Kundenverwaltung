@@ -1,0 +1,35 @@
+.formkit-container {
+    height: 30em;
+    padding: 2em;
+    background-color: var(--clr-primary);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color:white;
+
+    & .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
+    }
+    & input {
+        margin-bottom: .75em;
+        border-radius: .1em;
+        border: .05em solid grey;
+        font-size: 1.15em;
+        width: 15em;
+    }
+    & .formkit-outer > .formkit-wrapper > .formkit-input{
+        border: .09em solid grey;
+        font-size: 1em;
+        padding: .5em 2em .5em 2em;
+        cursor: pointer;
+        color: white;
+        background-color: var(--clr-primary);
+    }
+
+    & .formkit-outer > .formkit-wrapper > .formkit-input:hover{
+        background-color: var(--clr-primary-hover);
+    }
+}
+

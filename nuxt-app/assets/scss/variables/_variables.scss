@@ -1,0 +1,129 @@
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1600px,
+);
+// Viewports
+$viewports: (
+  // 'null' disable the viewport on a breakpoint
+  sm: 100%,
+  md: 100%,
+  lg: 100%,
+  xl: 1130px,
+  xxl: 1496px
+);
+$navbar-breakpoint: 1200px;
+:root {
+  // Colors
+  --clr-primary: #4357AD;
+  --clr-primary-hover: #80b8c431;
+  --clr-primary-focus: #4356ad5e;
+  --clr-primary-inverse: white;
+  --clr-secondary: #48a9a6;
+  --clr-secondary-hover: #48a9a6aa;
+  --clr-secondary-focus: #48a9a65b;
+  --clr-secondary-inverse: white;
+  --clr-tertiary: #e4dfda;
+  --clr-tertiary-hover: #e4dfdaa4;
+  --clr-tertiary-focus: #e4dfda55;
+  --clr-tertiary-inverse: white;
+  --clr-light: white;
+  --clr-light-hover: white;
+  --clr-light-focus: white;
+  --clr-light-inverse: black;
+  --clr-dark: black;
+  --clr-dark-hover: black;
+  --clr-dark-focus: black;
+  --clr-dark-inverse: white;
+  --clr-grey: grey;
+  --clr-dark-hover: #333;
+  --clr-dark-focus: #333;
+  --clr-dark-inverse: grey;
+  --clr-white: #ffffff;
+  --clr-black: #000000;
+  --clr-grey-0: hsl(0, 3.4%, 94.3%);
+  --clr-grey-1: hsl(0, 0%, 86.7%);
+  --clr-grey-2: hsl(0, 0%, 80%);
+  --clr-grey-3: hsl(60, 0.4%, 52.7%);
+  --clr-grey-4: hsl(0, 0%, 30.2%);
+  --clr-grey-5: hsl(0, 0%, 11%);
+  --clr-alert: #ea0000;
+  // Font Sizes
+  --fs-0: 0.5rem;
+  --fs-1: 0.75rem;
+  --fs-2: 1rem;
+  --fs-3: 1.25rem;
+  --fs-4: 1.5rem;
+  --fs-5: 2rem;
+  --fs-6: 2.5rem;
+  --fs-7: 3rem;
+  --fs-8: 3.5rem;
+  --fsf-0: clamp(0.75rem, 1.5vw, 1rem);
+  --fsf-1: clamp(1rem, 2vw, 1.75rem);
+  --fsf-2: clamp(2.25rem, 3vw, 3.5rem);
+  --fsf-3: clamp(3rem, 5vw, 5.375rem);
+  --fw-1: 100;
+  --fw-2: 200;
+  --fw-3: 300;
+  --fw-4: 400;
+  --fw-5: 500;
+  --fw-6: 600;
+  --fw-7: 700;
+  --fw-8: 800;
+  --fw-9: 900;
+  --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    Noto Sans, sans-serif;
+  --font-serif: ui-serif, serif;
+  --font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace,
+    SF Mono, Monaco, Droid Sans Mono, Source Code Pro, monospace;
+  --ff-regular: "Roboto", sans-serif;
+  --ff-headline: "Roboto", sans-serif;
+  --lh-0: 1.1;
+  --lh-1: 1.25;
+  --lh-2: 1.375;
+  --lh-3: 1.5;
+  --lh-4: 1.75;
+  --lh-5: 2;
+  --ls-0: -0.05em;
+  --ls-1: 0.025em;
+  --ls-2: 0.05em;
+  --ls-3: 0.075em;
+  --ls-4: 0.15em;
+  --ls-5: 0.5em;
+  --ls-6: 0.75em;
+  --ls-7: 1em;
+  --size-0: -0.25rem;
+  --size-1: 0.25rem;
+  --size-2: 0.5rem;
+  --size-3: 1rem;
+  --size-4: 1.25rem;
+  --size-5: 1.5rem;
+  --size-6: 1.75rem;
+  --size-7: 2rem;
+  --size-8: 3rem;
+  --size-9: 4rem;
+  --size-10: 5rem;
+  --size-11: 7.5rem;
+  --size-12: 10rem;
+  --size-13: 15rem;
+  --size-14: 20rem;
+  --size-15: 30rem;
+
+  // Forms
+  --form-element-spacing-vertical: 0.75rem;
+  --form-element-spacing-horizontal: 1rem;
+  --form-element-background-color: var(--clr-white);
+  --form-element-border-width: 1px;
+  --form-element-border-color: var(--clr-grey-2);
+  --form-element-color: var(--clr-grey-5);
+  --form-element-active-border-color: var(--clr-grey-5);
+  --form-element-active-background-color: var(--clr-white);
+  --form-element-placeholder-color: var(--clr-grey-2);
+  --form-element-border-width: 1px;
+
+  // Link
+  --clr-link: #f2f2f2;
+}

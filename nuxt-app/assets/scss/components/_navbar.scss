@@ -1,0 +1,36 @@
+.navigation-container {
+  width: 100%;
+  display: inline-block;
+}
+
+nav {
+  overflow: hidden;
+  background-color: var(--clr-primary);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  ul {
+    text-align: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 1em;
+    > .nav-items-right {
+      float: right;
+    }
+    li {
+      display: inline;
+      font-family: "Fira Sans", sans-serif;
+      font-size: 17px;
+      color: white;
+      > a {
+        cursor: pointer;
+        color: var(--clr-link);
+        text-decoration: none;
+        padding: 14px;
+        &:hover {
+          background-color: var(--clr-primary-hover);
+        }
+      }
+    }
+  }
+}
