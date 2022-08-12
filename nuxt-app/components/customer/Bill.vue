@@ -1,51 +1,62 @@
 <template>
-<div class="formkit-container">
+  <div class="formkit-container">
     <FormKit
       type="form"
-      v-model="formData"
-      id="registration-example"
-      submit-label="Registrieren"
-      @submit="handleSubmit"
-      :actions="false"
-      #default="{ value }"
+      v-model="form"
+      submit-label="Rechnung Anlegen"
+      @submit="onSubmit"
     >
-      <h1>Rechnung Speichern</h1>
+      <h1>Neue Rechnung Anlegen</h1>
       <hr />
-      <FormKit
-        type="text"
-        name="billname"
-        label="Rechnungsname"
-        placeholder="rechnung_mayer"
-      />
-      <FormKit
-        type="file"
-        name="billpdf"
-        label="PDF Rechnung hochladen"
-      />
-      <!-- <input type="file" name="upload" accept="application/pdf" /> -->
-      <FormKit type="submit" label="Rechnung Speichern" />
+      <div class="form-grid">
+        <FormKit
+          type="select"
+          name="flavor"
+          label="Kunden Auswählen"
+          validation="required"
+          :options="{
+            bbq: 'Wolfram',
+            pickle: 'Petra',
+          }"
+        />
+        <FormKit type="text" name="rechnungsbetrag" label="Rechnungsbetrag" />
+      </div>
+      <div class="form-grid">
+        <FormKit
+          type="select"
+          name="flavor"
+          label="Abrechnungszeitraum Auswählen"
+          validation="required"
+          :options="{
+            bbq: 'Einamlig',
+            pickle: 'Monatlich',
+            last: 'Jährlich',
+          }"
+        />
+        <FormKit type="date" name="rechnungsdatum" label="Rechnungsdatum" />
+      </div>
     </FormKit>
   </div>
 </template>
 
 <script setup lang="ts">
-const formData = ref({});
-const user = await useStrapiUser().value;
-const { create } = useStrapi4();
+//generate random bill number
 
-const BillObj = {
-  billname: "",
-  billpdf: "",
+const form = ref({});
+const strapiClient = useStrapiClient();
+
+let bill = {
+  data: {
+    rechnungsname: "",
+  },
 };
 
-const handleSubmit = async () => {
-    BillObj.billname = formData.value.billname
-    BillObj.billpdf = formData.value.billpdf
+async function onSubmit() {
   try {
-    await create("bills", { bill: {rechnungsname: BillObj.billname, pdf: BillObj.billpdf}, user: user.id });
-    console.log(BillObj)
-  } catch (error) {
-    console.log(error);     
+    bill.data.rechnungsname = form.value.billname;
+    await strapiClient("/bills", { method: "POST", body: bill });
+  } catch (e) {
+    console.log(e);
   }
-};
+}
 </script>

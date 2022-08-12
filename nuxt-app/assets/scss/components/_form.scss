@@ -1,35 +1,55 @@
 .formkit-container {
-    height: 30em;
-    padding: 2em;
+  height: 30em;
+  padding: 2em;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: rgba(0, 0, 0, 0.838);
+
+  & .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+  }
+  & input,
+  select {
+    -ms-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    margin-bottom: 0.75em;
+    border-radius: 0.1em;
+    border: 0.05em solid grey;
+    font-size: 1.15em;
+    width: 16em;
+    height: 2em;
+  }
+  & .formkit-outer > .formkit-wrapper > .formkit-input {
+    border: 0.09em solid grey;
+    margin-top: 1.5em;
+    font-size: 1em;
+    padding: 0.5em 2em 0.5em 2em;
+    cursor: pointer;
+    color: white;
     background-color: var(--clr-primary);
+  }
+
+  & .formkit-outer > .formkit-wrapper > .formkit-input:hover {
+    background-color: #4356ada9;
+  }
+
+  & .success-container {
+    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex; /* NEW, Spec - Firefox, Chrome, Opera */
     justify-content: center;
     align-items: center;
-    display: flex;
-    color:white;
+  }
 
-    & .form-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 1em;
-    }
-    & input {
-        margin-bottom: .75em;
-        border-radius: .1em;
-        border: .05em solid grey;
-        font-size: 1.15em;
-        width: 15em;
-    }
-    & .formkit-outer > .formkit-wrapper > .formkit-input{
-        border: .09em solid grey;
-        font-size: 1em;
-        padding: .5em 2em .5em 2em;
-        cursor: pointer;
-        color: white;
-        background-color: var(--clr-primary);
-    }
-
-    & .formkit-outer > .formkit-wrapper > .formkit-input:hover{
-        background-color: var(--clr-primary-hover);
-    }
+  & .check-solid-icon {
+    filter: invert(59%) sepia(62%) saturate(461%) hue-rotate(104deg)
+      brightness(103%) contrast(90%);
+    width: 4em;
+  }
 }
-
