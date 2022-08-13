@@ -9,17 +9,18 @@
       <h1>Neue Rechnung Anlegen</h1>
       <hr />
       <div class="form-grid">
-        <FormKit
-          type="select"
-          name="flavor"
-          label="Kunden Auswählen"
-          validation="required"
-          :options="{
-            bbq: 'Wolfram',
-            pickle: 'Petra',
-          }"
-        />
-        <FormKit type="text" name="rechnungsbetrag" label="Rechnungsbetrag" />
+        <div>
+          <label for="customer">Kunden Auswählen</label>
+          <select name="customer">
+            <option v-for="customerName in customersNames">
+              <span v-if="customerName.vorname && customerName.nachname">
+                {{ customerName.vorname }} {{ customerName.nachname }}
+              </span
+              >
+            </option>
+          </select>
+        </div>
+        <FormKit type="text" name="rechnungsbetrag" label="Rechnungsbetrag in €" />
       </div>
       <div class="form-grid">
         <FormKit
@@ -40,18 +41,31 @@
 </template>
 
 <script setup lang="ts">
-//generate random bill number
-
-const form = ref({});
 const strapiClient = useStrapiClient();
+const form = ref({});
+let customersNames = ref([]);
 
-let bill = {
-  data: {
-    rechnungsname: "",
-  },
+const getCustomers = async () => {
+  let customersResponse = {};
+  let sortedCustomersNames = [{}];
+
+  await strapiClient("/customers", { method: "GET" })
+    .then((response) => response)
+    .then((data) => (customersResponse = data));
+
+  for (let i = 0; i < customersResponse.data.length; i++) {
+    sortedCustomersNames.push(customersResponse.data[i].attributes);
+  }
+  customersNames.value = sortedCustomersNames;
+  console.log(customersNames.value);
 };
 
 async function onSubmit() {
+  let bill = {
+    data: {
+      rechnungsname: "",
+    },
+  };
   try {
     bill.data.rechnungsname = form.value.billname;
     await strapiClient("/bills", { method: "POST", body: bill });
@@ -59,4 +73,8 @@ async function onSubmit() {
     console.log(e);
   }
 }
+
+onMounted(() => {
+  getCustomers();
+});
 </script>
