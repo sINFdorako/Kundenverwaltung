@@ -1,5 +1,5 @@
 <template>
     <div>
-        <CustomerBill />
+        <CustomerNewBill />
     </div>
 </template>

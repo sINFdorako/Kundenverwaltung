@@ -1,0 +1,38 @@
+.billcard-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+}
+
+.billcard-container{
+    padding: 1em;
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    color: black;
+    width: auto;
+    height: auto;
+    background-color: var(--clr-primary-focus);
+    & h2{
+        font-size: 1.25em;
+    }
+    & h3 {
+        font-size: 1em;
+    }
+    & .billcard-header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2em;
+    }
+    & #rechnungsbetrag {
+        font-size: 2em;
+    }
+
+    & .billcard-button:hover {
+        cursor: pointer;
+    }
+    & .billcard-body {
+        margin-bottom: 2em;
+    }
+}
+

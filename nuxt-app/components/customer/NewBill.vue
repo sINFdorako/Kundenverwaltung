@@ -54,15 +54,10 @@
       </div>
       <nuxt-link to="/">Zurück zur Übersicht</nuxt-link>
     </div>
-    <button @click="createPDF">create pdf</button>
   </div>
 </template>
 
 <script setup lang="ts">  
-const createPDF = () => {
-
-}
-
 const strapiClient = useStrapiClient();
 const kundenname = ref();
 let completed = ref(false);

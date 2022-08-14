@@ -2,7 +2,7 @@
   <div class="main-page-container">
     <h1>Willkommen {{ user?.username }}</h1>
     <div>
-      <nuxt-link> Meine Rechnungen</nuxt-link>
+      <nuxt-link to="/rechnungen"> Meine Rechnungen</nuxt-link>
     </div>
     <div>
       <nuxt-link to="/kunden">Meine Kunden</nuxt-link>
