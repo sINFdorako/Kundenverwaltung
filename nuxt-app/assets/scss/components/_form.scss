@@ -42,6 +42,10 @@
     background-color: #4356ada9;
   }
 
+  & textarea {
+    width: 38.335em;
+  }
+
   & .success-container {
     display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
     display: -ms-flexbox; /* TWEENER - IE 10 */

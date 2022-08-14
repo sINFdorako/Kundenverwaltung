@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@nuxtjs/strapi": "^1.5.0",
+    "@types/pdfkit": "^0.12.6",
     "nuxt": "3.0.0-rc.6"
   },
   "dependencies": {
