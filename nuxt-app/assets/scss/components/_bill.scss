@@ -1,38 +1,58 @@
 .billcard-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
+
+.billcard-container {
+  padding: 1em;
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  color: white;
+  width: auto;
+  height: auto;
+  background-color: var(--clr-primary);
+  & h2 {
+    font-size: 1.25em;
+  }
+  & h3 {
+    font-size: 1em;
+  }
+  & .billcard-header {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1em;
-}
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2em;
+  }
+  & #rechnungsbetrag {
+    font-size: 2em;
+  }
 
-.billcard-container{
-    padding: 1em;
-    margin-top: 1em;
-    margin-left: 1em;
-    margin-right: 1em;
-    color: black;
-    width: auto;
-    height: auto;
+  & .billcard-button:hover {
+    cursor: pointer;
+  }
+  & .billcard-body {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+  & hr {
+    border: 0;
+    height: 1px;
+    background: rgb(255, 255, 255);
+  }
+  & .billcard-button {
+    border: 0.09em solid grey;
+    margin-top: 1.5em;
+    font-size: 1em;
+    padding: 0.5em 2em 0.5em 2em;
+    cursor: pointer;
+    color: white;
+    background-color: var(--clr-primary);
+  }
+  & .billcard-button:hover {
     background-color: var(--clr-primary-focus);
-    & h2{
-        font-size: 1.25em;
-    }
-    & h3 {
-        font-size: 1em;
-    }
-    & .billcard-header {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 2em;
-    }
-    & #rechnungsbetrag {
-        font-size: 2em;
-    }
-
-    & .billcard-button:hover {
-        cursor: pointer;
-    }
-    & .billcard-body {
-        margin-bottom: 2em;
-    }
+  }
+  & .billcard-button-wrapper{
+    text-align: center;
+  }
 }
-

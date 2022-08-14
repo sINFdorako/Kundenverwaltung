@@ -14,7 +14,9 @@
         <div class="billcard-body">
           <p>{{ bill.rechnungsleistung }}</p>
         </div>
-        <button class="billcard-button">Rechnung anzeigen</button>
+        <div class="billcard-button-wrapper">
+          <button class="billcard-button">Rechnung anzeigen</button>
+        </div>
       </div>
     </div>
   </div>
